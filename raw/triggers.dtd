@@ -2,6 +2,9 @@
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT process (name, trigger+)>
 <!ELEMENT trigger (#PCDATA | class | tex | trigger)*>
+<!ATTLIST trigger
+	page CDATA #REQUIRED
+>
 <!ELEMENT class (#PCDATA | force | tex )*>
 <!ATTLIST class
 	type CDATA #REQUIRED

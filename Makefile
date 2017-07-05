@@ -8,7 +8,7 @@ trigger.pdf: trigger.tex
 	pdflatex -draftmode -interaction=batchmode trigger
 	pdflatex -synctex=1 -interaction=nonstopmode trigger
 
-trigger.tex: extractClassification.py extractForces.py raw/*.xml raw/comments.tex report-skel/head.tex report-skel/tail.tex report-skel/middle.tex report-skel/itil.bib
+trigger.tex: config.py extractClassification.py extractForces.py raw/*.xml raw/comments.tex report-skel/head.tex report-skel/tail.tex report-skel/middle.tex report-skel/itil.bib
 	cat report-skel/head.tex > trigger.tex
 	python extractClassification.py >> trigger.tex
 	cat report-skel/middle.tex >> trigger.tex

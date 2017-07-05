@@ -5,43 +5,43 @@
 
 	<process>
 		<name>Event Management</name>
-		<trigger><class type="system event">Exceptions to any level of CI performance defined in the design specifications, OLAs or SOPs</class></trigger>
-		<trigger><class type="system event">Exceptions to an automated procedure or process, e.g. a routine change that has been assigned to a build team has not been completed in time</class></trigger>
-		<trigger><class type="system event">An exception within a business process that is being monitored by event management</class></trigger>
-		<trigger><class type="artifact">The completion of an automated task or job</class></trigger>
-		<trigger><class type="system event">A status change in a server or database CI</class></trigger>
-		<trigger><class type="system event">Access of an application or database by a user or automated procedure or job</class></trigger>
-		<trigger><class type="system event">A situation where a device, database or application etc. has reached a predefined threshold of performance.</class></trigger>
+		<trigger page="69"><class type="system event">Exceptions to any level of CI performance defined in the design specifications, OLAs or SOPs</class></trigger>
+		<trigger page="69"><class type="system event">Exceptions to an automated procedure or process, e.g. a routine change that has been assigned to a build team has not been completed in time</class></trigger>
+		<trigger page="69"><class type="system event">An exception within a business process that is being monitored by event management</class></trigger>
+		<trigger page="69"><class type="artifact">The completion of an automated task or job</class></trigger>
+		<trigger page="69"><class type="system event">A status change in a server or database CI</class></trigger>
+		<trigger page="69"><class type="system event">Access of an application or database by a user or automated procedure or job</class></trigger>
+		<trigger page="70"><class type="system event">A situation where a device, database or application etc. has reached a predefined threshold of performance.</class></trigger>
 	</process>
 
 	<process>
 		<name>Incident Management</name>
-		<trigger><class type="speechact"><force name="Notify"><assertive/></force><force name="Request"><directive/></force><force name="Complain"><assertive/><directive/><expressive/></force>Common: User rings the service desk or completes a web-based incident-logging screen</class></trigger>
-		<trigger><class type="system event">Incidents raised automatically via event management tools</class></trigger>
-		<trigger><class type="speechact"><force name="Notify"><assertive/></force><force name="Warn"><directive/></force>Potential failures noticed by technical staff</class></trigger>
-		<trigger><class type="speechact"><force name="Notify"><assertive/></force><force name="Warn"><directive/></force>Initiation of suppliers</class></trigger>
+		<trigger page="83"><class type="speechact"><force name="Notify"><assertive/></force><force name="Request"><directive/></force><force name="Complain"><assertive/><directive/><expressive/></force>Common: User rings the service desk or completes a web-based incident-logging screen</class></trigger>
+		<trigger page="83"><class type="system event">Incidents raised automatically via event management tools</class></trigger>
+		<trigger page="83"><class type="speechact"><force name="Notify"><assertive/></force><force name="Warn"><directive/></force>Potential failures noticed by technical staff</class></trigger>
+		<trigger page="83"><class type="speechact"><force name="Notify"><assertive/></force><force name="Warn"><directive/></force>Initiation of suppliers</class></trigger>
 	</process>
 
 	<process>
 		<name>Request Fulfilment</name>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>User calling the service desk</class></trigger>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>User completing some form of self-help web-based input screen</class></trigger>
+		<trigger page="94"><class type="speechact"><force name="Request"><directive/></force>User calling the service desk</class></trigger>
+		<trigger page="94"><class type="speechact"><force name="Request"><directive/></force>User completing some form of self-help web-based input screen</class></trigger>
 	</process>
 
 	<process>
 		<name>Problem Management</name>
-		<trigger><class type="artifact">Reaction to one or more incidents</class></trigger>
-		<trigger><class type="speechact"><force name="Initiate"><directive/></force>Raised/initiated via service desk staff</class></trigger>
-		<trigger><class type="speechact"><force name="Notify"><assertive/></force><force name="Warn"><directive/></force>Testing (particularly the latter stages of testing, user acceptance testing)</class></trigger>
-		<trigger><class type="speechact"><force name="Notify"><assertive/></force><force name="Warn"><directive/></force>Suppliers (potential faults / known deficiencies in their products or services)</class></trigger>
-		<trigger><class type="artifact">Proactive: By patterns of incidents, operation logs, operation communications, event logs</class></trigger>
+		<trigger page="106"><class type="artifact">Reaction to one or more incidents</class></trigger>
+		<trigger page="106"><class type="speechact"><force name="Initiate"><directive/></force>Raised/initiated via service desk staff</class></trigger>
+		<trigger page="106"><class type="speechact"><force name="Notify"><assertive/></force><force name="Warn"><directive/></force>Testing (particularly the latter stages of testing, user acceptance testing)</class></trigger>
+		<trigger page="106"><class type="speechact"><force name="Notify"><assertive/></force><force name="Warn"><directive/></force>Suppliers (potential faults / known deficiencies in their products or services)</class></trigger>
+		<trigger page="106"><class type="artifact">Proactive: By patterns of incidents, operation logs, operation communications, event logs</class></trigger>
 	</process>
 
 	<process>
 		<name>Access Management</name>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>An RFC (large-scale service introductions / upgrades)</class></trigger>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>A service request (service desk)</class></trigger>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>A request from human resources</class></trigger>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>A request from a manager</class></trigger>
+		<trigger page="115"><class type="speechact"><force name="Request"><directive/></force>An RFC (large-scale service introductions / upgrades)</class></trigger>
+		<trigger page="115"><class type="speechact"><force name="Request"><directive/></force>A service request (service desk)</class></trigger>
+		<trigger page="115"><class type="speechact"><force name="Request"><directive/></force>A request from human resources</class></trigger>
+		<trigger page="115"><class type="speechact"><force name="Request"><directive/></force>A request from a manager</class></trigger>
 	</process>
 </book>

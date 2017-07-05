@@ -203,6 +203,7 @@ class Trigger(TriggerContent):
 	
 	def __init__(self):
 		self.content = []
+		self.page = None
 
 	def addContent(self, content):
 		self.content.append(content)
@@ -332,6 +333,7 @@ def getBook(filename):
 	def extractTrigger(elem):
 		result = Trigger()
 		result.addText(elem.text)
+		result.page = elem.get("page")
 	
 		for e in elem:
 			if e.tag == "class":

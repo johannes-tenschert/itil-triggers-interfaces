@@ -5,51 +5,51 @@
 
 	<process>
 		<name>Strategy Management for IT services</name>
-		<trigger><class type="periodic">Annual planning cycles</class> Strategy management for IT services is used to review and plan on an annual basis</trigger>
-		<trigger><class type="observation">New business opportunity</class> Strategy management for IT services is used to analyze, set objectives, perspectives, positions, plans and patterns for new business or service opportunities.</trigger>
-		<trigger><class type="observation">Changes to internal or external environments</class> Strategy management for IT services will assess the impact of environmental changes on the existing strategic and tactical plans.</trigger>
-		<trigger><class type="decision">Mergers or acquisitions</class> The merger with or acquisition of another company will trigger a detailed analysis and definition of the strategy of the new organization.</trigger>
+		<trigger page="166"><class type="periodic">Annual planning cycles</class> Strategy management for IT services is used to review and plan on an annual basis</trigger>
+		<trigger page="166"><class type="observation">New business opportunity</class> Strategy management for IT services is used to analyze, set objectives, perspectives, positions, plans and patterns for new business or service opportunities.</trigger>
+		<trigger page="166"><class type="observation">Changes to internal or external environments</class> Strategy management for IT services will assess the impact of environmental changes on the existing strategic and tactical plans.</trigger>
+		<trigger page="166"><class type="decision">Mergers or acquisitions</class> The merger with or acquisition of another company will trigger a detailed analysis and definition of the strategy of the new organization.</trigger>
 	</process>
 
 	<process>
 		<name>Service Portfolio Management</name>
-		<trigger><class type="speechact"><force name="Inform"><assertive/><directive/></force>A new strategy has been devised, or an existing strategy is being changed</class>. This does not necessarily have to be in the form of a plan before service portfolio management is involved. A change to a perspective, position or pattern of action might impact existing services or service models. Service portfolio management could be used as part of the analysis of any potential impact.</trigger>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>Business relationship management receives a request for a new service or a change to an exisiting service</class>. Service portfolio management helps to define and formalize this request before <class type="none">submitting it to change management</class> in the form of a <class type="none">change proposal</class></trigger>
-		<trigger><class type="decision">Service improvement opportunities from CSI</class></trigger>
-		<trigger><class type="speechact"><force name="Inform"><assertive/></force><force name="Warn"><directive/></force><force name="Complain"><assertive/><directive/><expressive/></force><force name="Recommend"><directive/></force>Feedback from design, build and transition teams to indicate the status of the service during the charter stage of the process</class>. If these reports indicate a deviation from the specifications, cost or release time, service portfolio management will be involved in estimating the impact of this, and defining corrective action.</trigger>
-		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Service level management reviews that identify a service is not meeting its expected outcomes or that it is not being used in the way it was intended</class>.</trigger>
-		<trigger><class type="speechact"><force name="Warn"><directive/></force>Financial management for IT services indicates that a service costs significantly more or less than anticipated</class>, thus impacting the potential return on investment for that service.</trigger>
+		<trigger page="196"><class type="speechact"><force name="Inform"><assertive/><directive/></force>A new strategy has been devised, or an existing strategy is being changed</class>. This does not necessarily have to be in the form of a plan before service portfolio management is involved. A change to a perspective, position or pattern of action might impact existing services or service models. Service portfolio management could be used as part of the analysis of any potential impact.</trigger>
+		<trigger page="196"><class type="speechact"><force name="Request"><directive/></force>Business relationship management receives a request for a new service or a change to an exisiting service</class>. Service portfolio management helps to define and formalize this request before <class type="none">submitting it to change management</class> in the form of a <class type="none">change proposal</class></trigger>
+		<trigger page="196"><class type="decision">Service improvement opportunities from CSI</class></trigger>
+		<trigger page="196"><class type="speechact"><force name="Inform"><assertive/></force><force name="Warn"><directive/></force><force name="Complain"><assertive/><directive/><expressive/></force><force name="Recommend"><directive/></force>Feedback from design, build and transition teams to indicate the status of the service during the charter stage of the process</class>. If these reports indicate a deviation from the specifications, cost or release time, service portfolio management will be involved in estimating the impact of this, and defining corrective action.</trigger>
+		<trigger page="196"><class type="speechact"><force name="Review"><assertive/><directive/></force>Service level management reviews that identify a service is not meeting its expected outcomes or that it is not being used in the way it was intended</class>.</trigger>
+		<trigger page="196"><class type="speechact"><force name="Warn"><directive/></force>Financial management for IT services indicates that a service costs significantly more or less than anticipated</class>, thus impacting the potential return on investment for that service.</trigger>
 	</process>
 
 	<process>
 		<name>Financial Management for IT Services</name>
-		<trigger><class type="periodic">Monthly, quarterly and annual financial reporting cycles</class> are mandated and form part of the standard financial management policies and standards of any organization. An example of a regularly triggered financial process is budgeting.</trigger>
-		<trigger><class type="artifact">Audits will indicate actions</class> that need to be taken to adjust some aspect of the accounting, budgeting or charging system.</trigger>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>Requests for financial information from other service management processes</class> - for example, return on investment information for services in the service portfolio, or information to determine the cost of making a change.</trigger>
-		<trigger><class type="decision">Investigation into a new service opportunity</class>, either during the definition of a strategy (high-level financial value of the opportunity), <class type="none">or during service portfolio management</class> where a more specific financial assessment is required.
+		<trigger page="240"><class type="periodic">Monthly, quarterly and annual financial reporting cycles</class> are mandated and form part of the standard financial management policies and standards of any organization. An example of a regularly triggered financial process is budgeting.</trigger>
+		<trigger page="240"><class type="artifact">Audits will indicate actions</class> that need to be taken to adjust some aspect of the accounting, budgeting or charging system.</trigger>
+		<trigger page="240"><class type="speechact"><force name="Request"><directive/></force>Requests for financial information from other service management processes</class> - for example, return on investment information for services in the service portfolio, or information to determine the cost of making a change.</trigger>
+		<trigger page="240"><class type="decision">Investigation into a new service opportunity</class>, either during the definition of a strategy (high-level financial value of the opportunity), <class type="none">or during service portfolio management</class> where a more specific financial assessment is required.
 			<tex>\\ \textcolor{red}{\small $\rightarrow$</tex> SPM primarily triggered by speech acts, nonetheless it's a decision that is communicated<tex>}</tex></trigger>
-		<trigger><class type="decision">The introduction of charging for IT services</class> (internal service provider) or the need to determine the price of a service (external service provider).</trigger>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>A request for change</class> will trigger the need for financial information about the cost of making changes, and the ongoing financial impact of the change.</trigger>
+		<trigger page="240"><class type="decision">The introduction of charging for IT services</class> (internal service provider) or the need to determine the price of a service (external service provider).</trigger>
+		<trigger page="240"><class type="speechact"><force name="Request"><directive/></force>A request for change</class> will trigger the need for financial information about the cost of making changes, and the ongoing financial impact of the change.</trigger>
 	</process>
 
 	<process>
 		<name>Demand Management</name>
-		<trigger><class type="speechact"><force name="Request"><directive/></force>A request from a customer for new service, or change to an existing service</class>. This will be initiated through business relationship management and service portfolio management.</trigger>
-		<trigger><class type="decision">A new service is being created to meet a strategic initiative</class> - this will be initiated through service portfolio management.</trigger>
-		<trigger><class type="decision">A service model needs to be defined</class>, and patterns of business activity and/or user profiles must be defined.</trigger>
-		<trigger><class type="artifact">Utilization rates are causing potential performance issues</class>, or a potential breach of an SLA</trigger>
-		<trigger><class type="artifact">An exception has occured</class> to forecast patterns of business activity</trigger>
+		<trigger page="253"><class type="speechact"><force name="Request"><directive/></force>A request from a customer for new service, or change to an existing service</class>. This will be initiated through business relationship management and service portfolio management.</trigger>
+		<trigger page="253"><class type="decision">A new service is being created to meet a strategic initiative</class> - this will be initiated through service portfolio management.</trigger>
+		<trigger page="253"><class type="decision">A service model needs to be defined</class>, and patterns of business activity and/or user profiles must be defined.</trigger>
+		<trigger page="253"><class type="artifact">Utilization rates are causing potential performance issues</class>, or a potential breach of an SLA</trigger>
+		<trigger page="253"><class type="artifact">An exception has occured</class> to forecast patterns of business activity</trigger>
 	</process>
 
 	<process>
 		<name>Business Relationship Management</name>
-		<trigger><class type="decision">A new strategic initiative</class></trigger>
-		<trigger><class type="decision">A new service, or a change to an existing service, has been initiated</class></trigger>
-		<trigger><class type="observation">A new opportunity has been identified</class></trigger>
-		<trigger><class type="decision">A service has been chartered</class> by service portfolio management</trigger>
-		<trigger><class type="speechact"><force name="Request"><directive/></force><force name="Suggest"><directive/></force>Customer requests or suggestions</class></trigger>
-		<trigger><class type="speechact"><force name="Complain"><assertive/><directive/><expressive/></force>Customer complaints</class></trigger>
-		<trigger><class type="artifact">A customer meeting has been scheduled</class></trigger>
-		<trigger><class type="artifact">A customer satisfaction survey has been scheduled</class></trigger>
+		<trigger page="277"><class type="decision">A new strategic initiative</class></trigger>
+		<trigger page="277"><class type="decision">A new service, or a change to an existing service, has been initiated</class></trigger>
+		<trigger page="277"><class type="observation">A new opportunity has been identified</class></trigger>
+		<trigger page="277"><class type="decision">A service has been chartered</class> by service portfolio management</trigger>
+		<trigger page="277"><class type="speechact"><force name="Request"><directive/></force><force name="Suggest"><directive/></force>Customer requests or suggestions</class></trigger>
+		<trigger page="277"><class type="speechact"><force name="Complain"><assertive/><directive/><expressive/></force>Customer complaints</class></trigger>
+		<trigger page="277"><class type="artifact">A customer meeting has been scheduled</class></trigger>
+		<trigger page="277"><class type="artifact">A customer satisfaction survey has been scheduled</class></trigger>
 	</process>
 </book>

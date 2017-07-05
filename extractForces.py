@@ -20,9 +20,9 @@ for b in books:
 	sys.stdout.write("\\section{%s}\n" % b.name)
 	
 	# Boilerplate BEGIN longtable
-	sys.stdout.write("\\begin{longtable}{|p{.6\linewidth}|p{.4\linewidth}|}\n")
+	sys.stdout.write("\\begin{longtable}{|l|p{.5\linewidth}|p{.35\linewidth}|}\n")
 	sys.stdout.write("\t\\hline\n")
-	sys.stdout.write("\tTrigger & Illocutionary Force$_\\text{Illocutionary Point(s)}$ \\\\\n")
+	sys.stdout.write("\tPage & Trigger & Illocutionary Force$_\\text{Illocutionary Point(s)}$ \\\\\n")
 	sys.stdout.write("\t\\hline\n")
 	sys.stdout.write("\t\\endhead\n\n")
 	
@@ -43,12 +43,12 @@ for b in books:
 				
 				# Output process
 				if not process in outputfinished:
-					sys.stdout.write("\t\\hline \\multicolumn{2}{|l|}{\\textbf{")
+					sys.stdout.write("\t\\hline \\multicolumn{3}{|l|}{\\textbf{")
 					sys.stdout.write(process.name)
 					sys.stdout.write("}} \\\\\n")
 					outputfinished.insert(0, process)
 				
-				sys.stdout.write("\t\\hline %s & %s \\\\\n" % (content.latexContent(), forces))
+				sys.stdout.write("\t\\hline %s & %s & %s \\\\\n" % (trigger.page, content.latexContent(), forces))
 
 			elif isinstance(content, Trigger):
 				checkTrigger(process, content)
