@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "triggers.dtd">
+<book>
+	<name>Continual Service Improvement</name>
+
+	<process>
+		<name>Continual Service Improvement Processes</name>
+		<trigger>Ongoing processes:<trigger><class type="periodic">Probably periodic triggers</class></trigger><trigger><class type="observation">Probably observations by continual service improvement staff</class></trigger></trigger>
+		<trigger><class type="decision">New incentives</class></trigger>
+		<trigger><class type="decision">Changing business requirements</class>
+			<tex>\\ $\rightarrow$</tex> Highly probable due to decision to accept / for awareness of changed requirements</trigger>
+		<trigger>Poor performance or spiralling costs:<trigger><class type="speechact"><force name="Complain"><assertive/><directive/><expressive/></force>Complaint</class></trigger><trigger><class type="artifact">Automatically gathered information</class></trigger></trigger>
+	</process>
+</book>
