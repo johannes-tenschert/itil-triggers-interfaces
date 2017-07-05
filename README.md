@@ -42,8 +42,9 @@ Generating the report is done with make (or make trigger.pdf).
 There are options in config.py to enable/disable statistics and books.
 The makefile executes extractClassification.py, extractForces.py, and adds LaTeX boilerplate (head.tex, middle.tex, tail.tex).
 
-| Command       | Description       |
-| ------------- | ----------------- |
-| `make`        | Generate report   |
-| `make clean`  | Clean this folder |
-| `make proper` | Reset this folder |
+| Command         | Description                                                 |
+| --------------- | ----------------------------------------------------------- |
+| `make`          | Generate report                                             |
+| `make clean`    | Clean this folder                                           |
+| `make proper`   | Reset this folder                                           |
+| `make checkdtd` | Check raw XML files for whether they adhere to triggers.dtd |
