@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "triggers.dtd">
+<book>
+	<name>Service Design</name>
+
+	<process>
+		<name>Design Coordination</name>
+		<trigger><class type="observation">Changes in the business requirements and services</class></trigger>
+		<trigger><class type="speechact"><force name="Request"><directive/></force>Requests for Change (RFC)</class></trigger>
+		<trigger><class type="decision">Creation of new programs and projects</class></trigger>
+		<trigger><class type="decision">Revision of the overall IT strategy</class></trigger>
+	</process>
+
+	<process>
+		<name>Service Catalogue Management</name>
+		<trigger><class type="observation">Changes in the business requirements and services</class></trigger>
+		<trigger><class type="speechact"><force name="Request"><directive/></force>Requests for Change (RFC)</class></trigger>
+		<trigger><class type="decision">New services</class></trigger>
+		<trigger><class type="decision">Changes to existing services</class></trigger>
+		<trigger><class type="decision">Services being retired</class></trigger>
+	</process>
+
+	<process>
+		<name>Service Level Management</name>
+		<trigger><class type="artifact">Changes in the service portfolio</class>, such as new or changes business requirements or new or changed services</trigger>
+		<trigger><class type="decision">New or changed agreements, SLRs, SLAs, OLAs or contracts</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><declarative/><directive/></force><force name="Request"><directive/></force><force name="Offer"><commissive/></force><force name="Counter-Offer"><commissive/><directive/></force><force name="Accept"><commissive/><declarative/></force><force name="Reject"><declarative/></force><force name="Question"><directive/></force><force name="Clarification"><assertive/></force>Service review meetings and actions</class></trigger>
+		<trigger><class type="artifact">Service breaches or threatened breaches</class></trigger>
+		<trigger><class type="speechact"><force name="Compliment"><directive/><expressive/></force><force name="Complain"><assertive/><directive/><expressive/></force>Compliments and compliants</class></trigger>
+		<trigger><class type="periodic">Periodic activities such as reviewing, reporting and customer satisfaction surveys</class></trigger>
+		<trigger><class type="decision">Changes in strategy or policy</class></trigger>
+	</process>
+
+	<process>
+		<name>Availability Management</name>
+		<trigger><class type="observation">New or changed business needs</class> or <class type="decision">new or changed services</class></trigger>
+		<trigger><class type="decision">New or changed targets within agreements, such as SLRs, SLAs, OLAs or contracts</class></trigger>
+		<trigger><class type="artifact">Service or component breaches</class>, <class type="system event">availability events and alerts, including threshold events, exception reports</class></trigger>
+		<trigger><class type="periodic">Periodic activities such as reviewing, revising or reporting</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review of availability management forecasts, reports and plans</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of business and IT plans and strategies</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of designs and strategies</class></trigger>
+		<trigger><class type="speechact"><force name="Recognize"><commissive/><declarative/></force><force name="Notify"><assertive/></force>Recognition or notification of a change of risk or impact of a business process or VBF, an IT service or component</class></trigger>
+		<trigger><class type="speechact"><force name="Request"><directive/></force>Request from SLM for assistance with availability targets and explanation of achievements</class></trigger>
+	</process>
+
+	<process>
+		<name>Capacity Management</name>
+		<trigger><class type="observation">New and changed services requiring additional capacity</class></trigger>
+		<trigger><class type="artifact">Service breaches</class>, <class type="system event">capacity or performance events and alerts, including threshold events</class></trigger>
+		<trigger><class type="system event">Exception reports</class></trigger>
+		<trigger><class type="periodic">Periodic revision of current capacity and performance and the review of forecasts, reports and plans</class></trigger>
+		<trigger><class type="periodic">Periodic trending and modeling</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of business and IT plans and strategies</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of designs and strategies</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of SLAs, OLAs, contracts or any other agreements</class></trigger>
+		<trigger><class type="speechact"><force name="Request"><directive/></force>Request from SLM for assistance with capacity and/or performance targets and explanation of achievements</class></trigger>
+	</process>
+
+	<process>
+		<name>IT Service Continuity Management</name>
+		<trigger><class type="observation">New or changed business needs</class>, or <class type="decision">new or changed services</class></trigger>
+		<trigger><class type="decision">New or changed targets within agreements, such as SLRs, SLAs, OLAs or contracts</class></trigger>
+		<trigger><class type="artifact">The occurence of a major incident that requires assessment for potential invocation of either business or IT continuity plans</class></trigger>
+		<trigger><class type="periodic">Periodic activities such as the BIA or risk assessment activities, maintenance of continuity plans or other reviewing, revising or reporting activities</class></trigger>
+		<trigger><class type="speechact"><force name="Notify"><assertive/></force>Assessment of changes and attendance at change advisory board meetings</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of business and IT plans and strategies</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of designs and strategies</class></trigger>
+		<trigger><class type="speechact"><force name="Recognize"><commissive/><declarative/></force><force name="Notify"><assertive/></force>Recognition or notification of a change of risk or impact of a business process or VBF, an IT service or component</class></trigger>
+		<trigger><class type="decision">Initiation of tests of continuity and recovery plans</class></trigger>
+		<trigger><class type="observation">Lessons learned from previous continuity events and associated recovery activities</class></trigger>
+	</process>
+
+	<process>
+		<name>Information Security Management</name>
+		<trigger><class type="decision">New or changed corporate governance guidelines</class></trigger>
+		<trigger><class type="decision">New or changed business security policy</class></trigger>
+		<trigger><class type="decision">New or changed corporate risk management processes and guidelines</class></trigger>
+		<trigger><class type="observation">New or changed business needs</class> or <class type="decision">new or changed services</class></trigger>
+		<trigger><class type="decision">New or changed requirements within agreements, such as SLRs, SLAs, OLAs or contracts</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of business and IT plans and strategies</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of designs and strategies</class></trigger>
+		<trigger><class type="artifact">Service or component security breaches or warnings</class>, <class type="system event">events and alerts, including threshold events, exception reports</class></trigger>
+		<trigger><class type="periodic">Periodic activities, such as reviewing, revising or reporting, including review and revision of information security management policies, reports and plans</class></trigger>
+		<trigger><class type="speechact"><force name="Recognize"><commissive/><declarative/></force><force name="Notify"><assertive/></force>Recognition or notification of a change of risk or impact of a business process or VBF, an IT service or component</class></trigger>
+		<trigger><class type="speechact"><force name="Request"><directive/></force>Requests from other areas, particularly SLM for assistance with security issues</class></trigger>
+	</process>
+
+	<process>
+		<name>Supplier Management</name>
+		<trigger><class type="decision">New or changed corporate governance guidelines</class></trigger>
+		<trigger><class type="decision">New or changed business and IT strategies, policies or plans</class></trigger>
+		<trigger><class type="decision">New or changed business needs or new or changed services</class></trigger>
+		<trigger><class type="decision">New or changed requirements within agreements, such as SLRs, SLAs, OLAs or contracts</class></trigger>
+		<trigger><class type="speechact"><force name="Review"><assertive/><directive/></force>Review and revision of designs and strategies</class></trigger>
+		<trigger><class type="periodic">Periodic activities such as reviewing, revising, reporting, including review and revision of supplier management policies, reports and plans</class></trigger>
+		<trigger><class type="speechact"><force name="Request"><directive/></force>Requests from other areas, particularly SLM and information security management, for assistance with supplier issues</class></trigger>
+		<trigger><class type="speechact"><force name="Notify"><assertive/></force><force name="Review"><assertive/><directive/></force><force name="Confirm"><commissive/></force>Requirements for new contracts, contract renewal or contract termination</class></trigger>
+		<trigger><class type="decision">Re-categorization of suppliers and/or contracts</class></trigger>
+	</process>
+</book>

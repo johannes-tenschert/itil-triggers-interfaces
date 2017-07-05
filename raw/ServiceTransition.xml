@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "triggers.dtd">
+<book>
+	<name>Service Transition</name>
+
+	<process>
+		<name>Transition Planning and Support</name>
+		<trigger><class type="speechact"><force name="Authorize"><declarative /></force>Authorized change</class> (<tex>$\rightarrow$</tex> Planning a single transition)</trigger>
+		<trigger><class type="speechact"><force name="Inform"><assertive/><directive/></force>Receipt of a change proposal from service portfolio management</class> (<tex>$\rightarrow$</tex> Longer-term planning)</trigger>
+		<trigger><class type="periodic">The organization&apos;s budgetary planning cycle</class> (<tex>$\rightarrow$</tex> budgeting for future transition requirements)</trigger>
+	</process>
+
+	<process>
+		<name>Change Management</name>
+		<trigger><class type="decision">Strategic changes</class><trigger>Legal / regulatory change</trigger><trigger>Organizational change</trigger><trigger>Policy and standards change</trigger><trigger>Change after analyzing business, customer and user activitiy patterns</trigger><trigger>Addition of new service to the market space</trigger><trigger>Updates to the service portfolio, customer portfolio or customer agreement portfolio</trigger><trigger>Change of sourcing model</trigger><trigger>Technology innovation</trigger>
+		</trigger>
+		<trigger><class type="decision">Change to one or more services</class><trigger>Service catalogue</trigger><trigger>Service package</trigger><trigger>Service definition and characteristics</trigger><trigger>Release package</trigger><trigger>Capacity and resource requirements</trigger><trigger>...</trigger></trigger>
+		<trigger>Operational change: Requests initiated by users<trigger><class type="speechact"><force name="Request"><directive/></force>Password reset</class></trigger><trigger><class type="speechact"><force name="Request"><directive/></force>Access request</class></trigger><trigger><class type="speechact"><force name="Request"><directive/></force>Request to move an IT asset</class></trigger></trigger>
+		<trigger>Changes to deliver continual improvement<trigger><class type="none">CSI determines</class> that an improvement to a service is warranted <tex>$\rightarrow$</tex><class type="speechact"><force name="Request"><directive/></force>RFC submitted to change management</class></trigger></trigger>
+	</process>
+
+	<process>
+		<name>Service Asset and Configuration Management</name>
+		<trigger><class type="speechact"><force name="Notify"><assertive/></force><force name="Authorize"><declarative /></force><force name="Reject"><declarative/></force>Updates from change management</class> (see Figure 4.6)<tex>\\</tex>
+			e.g. Raise/record change request, Authorize/reject change, Close change</trigger>
+		<trigger><class type="speechact"><force name="Notify"><assertive/></force>Updates from release and deployment management</class></trigger>
+		<trigger><class type="speechact"><force name="Order"><directive/></force>Purchase orders</class></trigger>
+		<trigger><class type="decision">Acquisitions</class></trigger>
+		<trigger><class type="speechact"><force name="Request"><directive/></force>Service requests</class></trigger>
+	</process>
+
+	<process>
+		<name>Release and deployment management</name>
+		<trigger><class type="speechact"><force name="Authorize"><declarative /></force>Receipt of an authorized change to plan, build and test a production-ready release package</class>
+			<tex>\\ $\rightarrow$</tex> Release and deployment management</trigger>
+		<trigger><class type="speechact"><force name="Authorize"><declarative /></force>Receipt of an authorized change to deploy a release package</class> to a target deployment group or environment (e.g. business unit, customer group) <tex>\\ $\rightarrow$</tex> Deployment</trigger>
+	</process>
+
+	<process>
+		<name>Service Validation and Testing</name>
+		<trigger><class type="artifact">Scheduled activity on a release plan, test plan or quality assurance plan</class></trigger>
+	</process>
+
+	<process>
+		<name>Change Evaluation</name>
+		<trigger><class type="speechact"><force name="Request"><directive/></force>Receipt of a request for evaluation from change management</class></trigger>
+	</process>
+
+	<process>
+		<name>Knowledge Management</name>
+		<trigger><class type="speechact"><force name="Inform"><assertive/></force>Business relationship management storing the minutes of a customer meeting</class>
+			<tex>\\ {\small ($\rightarrow$</tex>Storing commitments, questions, ...<tex>)}</tex></trigger>
+		<trigger><class type="decision">Updates to the service catalogue or service portfolio</class></trigger>
+		<trigger><class type="decision">Modification of a service design package</class></trigger>
+		<trigger><class type="decision">Creation of a new or updated capacity plan</class></trigger>
+		<trigger><class type="artifact">Receipt of an updated user manual from a supplier</class>
+			<tex>\\ {\small ($\rightarrow$</tex> Artifact or informing about artifact... Decision: just artifact<tex>)}</tex></trigger>
+		<trigger><class type="artifact">Creation of a customer report</class></trigger>
+		<trigger><class type="decision">Updates to the CSI register</class></trigger>
+	</process>
+</book>

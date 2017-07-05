@@ -1,0 +1,18 @@
+<!ELEMENT book (name, process*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT process (name, trigger+)>
+<!ELEMENT trigger (#PCDATA | class | tex | trigger)*>
+<!ELEMENT class (#PCDATA | force | tex )*>
+<!ATTLIST class
+	type CDATA #REQUIRED
+>
+<!ELEMENT force (assertive?, commissive?, declarative?, directive?, expressive?)>
+<!ATTLIST force
+	name CDATA #REQUIRED
+>
+<!ELEMENT assertive EMPTY>
+<!ELEMENT commissive EMPTY>
+<!ELEMENT declarative EMPTY>
+<!ELEMENT directive EMPTY>
+<!ELEMENT expressive EMPTY>
+<!ELEMENT tex (#PCDATA)>

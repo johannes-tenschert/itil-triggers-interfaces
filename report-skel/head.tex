@@ -1,0 +1,156 @@
+\documentclass[a4paper, 12pt, oneside]{scrbook}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{soul}
+\usepackage{longtable}
+\usepackage{amsmath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fancy Highlight                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathmorphing}
+
+\makeatletter
+
+\newcommand{\defhighlighter}[3][]{%
+  \tikzset{every highlighter/.style={color=#2, fill opacity=#3, #1}}%
+}
+
+\defhighlighter{yellow}{.5}
+
+\newcommand{\highlight@DoHighlight}{
+  \fill [ decoration = {random steps, amplitude=1pt, segment length=15pt}
+        , outer sep = -15pt, inner sep = 0pt, decorate
+        , every highlighter, this highlighter ]
+        ($(begin highlight)+(0,8pt)$) rectangle ($(end highlight)+(0,-3pt)$) ;
+}
+
+\newcommand{\highlight@BeginHighlight}{
+  \coordinate (begin highlight) at (0,0) ;
+}
+
+\newcommand{\highlight@EndHighlight}{
+  \coordinate (end highlight) at (0,0) ;
+}
+
+\newdimen\highlight@previous
+\newdimen\highlight@current
+
+\DeclareRobustCommand*\highlight[1][]{%
+  \tikzset{this highlighter/.style={#1}}%
+  \SOUL@setup
+  %
+  \def\SOUL@preamble{%
+    \begin{tikzpicture}[overlay, remember picture]
+      \highlight@BeginHighlight
+      \highlight@EndHighlight
+    \end{tikzpicture}%
+  }%
+  %
+  \def\SOUL@postamble{%
+    \begin{tikzpicture}[overlay, remember picture]
+      \highlight@EndHighlight
+      \highlight@DoHighlight
+    \end{tikzpicture}%
+  }%
+  %
+  \def\SOUL@everyhyphen{%
+    \discretionary{%
+      \SOUL@setkern\SOUL@hyphkern
+      \SOUL@sethyphenchar
+      \tikz[overlay, remember picture] \highlight@EndHighlight ;%
+    }{%
+    }{%
+      \SOUL@setkern\SOUL@charkern
+    }%
+  }%
+  %
+  \def\SOUL@everyexhyphen##1{%
+    \SOUL@setkern\SOUL@hyphkern
+    \hbox{##1}%
+    \discretionary{%
+      \tikz[overlay, remember picture] \highlight@EndHighlight ;%
+    }{%
+    }{%
+      \SOUL@setkern\SOUL@charkern
+    }%
+  }%
+  %
+  \def\SOUL@everysyllable{%
+    \begin{tikzpicture}[overlay, remember picture]
+      \path let \p0 = (begin highlight), \p1 = (0,0) in \pgfextra
+        \global\highlight@previous=\y0
+        \global\highlight@current =\y1
+      \endpgfextra (0,0) ;
+      \ifdim\highlight@current < \highlight@previous
+        \highlight@DoHighlight
+        \highlight@BeginHighlight
+      \fi
+    \end{tikzpicture}%
+    \the\SOUL@syllable
+    \tikz[overlay, remember picture] \highlight@EndHighlight ;%
+  }%
+  \SOUL@
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END Fancy Highlight                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Necessary
+%\newcommand{\hlc}[3]{\noindent\sethlcolor{#1}\textcolor{#2}{\hl{#3}}} % boring & fast
+\newcommand{\hlc}[3]{\noindent\highlight[#1]{#3}} % fancy & slow
+
+\title{Classification of Triggers in ITIL \\ (Generated Report)}
+\author{Johannes Tenschert, and Richard Lenz}
+\publishers{ % Short intro on title page...
+	\normalfont\normalsize%
+	\parbox{0.8\linewidth}{%
+		This report consists of two parts.
+		First,
+		we identify six categories of triggers
+		and list classifications for each trigger.
+		Afterwards,
+		for triggers that were immediately identified as speech acts,
+		we outline potential illocutionary forces (intentions).
+	}
+}
+
+
+\begin{document}
+
+\maketitle
+
+\chapter{Classification of Triggers}
+
+We identified six categories of triggers:
+
+\newcommand{\itil}[3]{\item \hlc{#2}{#3}{#1:} \\}
+\newcommand{\eg}{e.\,g.\ }
+\newcommand{\ie}{i.\,e.\ }
+\begin{enumerate}
+	\itil{Speech acts immediately identifiable}{red}{white}
+	\emph{Interactions} that are some sort of speech act, \eg requesting, complaining, reporting, and triggers after review meetings. Triggers after meetings are raised through the interactions and decisions in a meeting, so even though their exact categorization was not elaborated, the actual trigger \emph{is} a speech act.
+	\itil{Decision made by other department}{cyan}{white}
+	A decision made by some other department has to be communicated to start a process. Even if it is only written in a document (artifact), commanding its execution definitely is a speech act. Hence, we view decisions as implicit speech acts as soon as they are communicated to put into practice.
+	\itil{Artifact}{lime}{black}
+	The creation of artifacts, \eg utilization rates, a scheduled meeting, or a published customer satisfaction survey, may or may not be triggered by speech acts. For reasons of clarity, artifacts do not count as speech acts.
+	\itil{System event}{magenta}{white}
+	Special case of artifact in which a computer system raises an exception or yields certain events and alerts. Even though some of those messages could be viewed as speech acts, for reasons of clarity they are not.
+	\itil{Periodic trigger}{yellow}{black}
+	For example, monthly/quarterly reporting or budget planning cycles. Periodic triggers do not count as speech acts.
+	\itil{Observation}{brown}{white}
+	Some insight a member of an organizational unit gained about changes in business needs, opportunities, etc. This knowledge does not always have to be transferred and interactions are not always necessary to trigger a process. For reasons of clarity, observations do not count as speech acts.
+\end{enumerate}
+
+
+Some parts of a trigger are just highlighted without any intended classification. Those are marked \hlc{black}{white}{like this block$_{\mbox{\tiny none}}$} and not included in any statistics.
+
+\newpage
+
+\vspace{10pt}
+\noindent\textbf{Statistics for five core ITIL publications:}
+
