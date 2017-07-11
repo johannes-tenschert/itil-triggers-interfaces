@@ -1,6 +1,10 @@
-.PHONY: all clean checkdtd proper
+.PHONY: all clean checkdtd proper report interfaces
 	
-all: trigger.pdf
+all: report interfaces
+
+report: trigger.pdf
+
+interfaces: interfaces.pdf
 
 trigger.pdf: trigger.tex
 	pdflatex -draftmode -interaction=batchmode trigger
@@ -23,9 +27,17 @@ clean:
 	rm -f trigger.log
 	rm -f trigger.synctex.gz
 	rm -f *.pyc
+	rm -f interfaces/smaller.dot
 
 proper: clean
 	rm -f trigger.pdf
+	rm -f interfaces.pdf
 
 checkdtd:
 	xmllint --valid --noout raw/ContinualServiceImprovement.xml raw/ServiceOperation.xml raw/ServiceTransition.xml raw/ServiceDesign.xml raw/ServiceStrategy.xml
+
+interfaces.pdf: interfaces/smaller.dot
+	neato -Tpdf -o interfaces.pdf interfaces/smaller.dot
+
+interfaces/smaller.dot: interfaces/extract.py interfaces/raw.dot
+	interfaces/extract.py < interfaces/raw.dot > interfaces/smaller.dot

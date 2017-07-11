@@ -1,0 +1,348 @@
+digraph G {
+
+overlap=false;
+splines=true;
+
+// COPY ALL
+
+// Service Lifecycle
+node [shape="ellipse",color=dimgrey,fontcolor=white,style=filled];
+ss_stage [label="Service strategy", pos="0,0"];
+sd_stage [label="Service design", pos="5,0"];
+st_stage [label="Service transition", pos="0,5"];
+so_stage [label="Service operation", pos="5,5"];
+csi_stage [label="Continual service improvement", pos="2.5,2.5"];
+
+node [shape="rectangle",color=black,fontcolor=black,style=""];
+edge [color=dimgrey, len=1, weight=100, arrowhead="none", penwidth=3];
+
+// Service Strategy
+ss_sm [label="Strategy management for IT services"];
+ss_spm [label="Service portfolio management"];
+ss_fm [label="Financial management for IT services"];
+ss_dm [label="Demand management"];
+ss_brm [label="Business relationship management"];
+ss_stage -> ss_sm;
+ss_stage -> ss_spm;
+ss_stage -> ss_fm;
+ss_stage -> ss_dm;
+ss_stage -> ss_brm;
+
+// Service Design
+sd_dc [label="Design coordination"];
+sd_scm [label="Service catalogue management"];
+sd_slm [label="Service level management"];
+sd_am [label="Availability management"];
+sd_CapM [label="Capacity management"];
+sd_ConM [label="IT service continuity management"];
+sd_ISecM [label="Information security management"];
+sd_SupM [label="Supplier management"];
+sd_stage -> sd_dc;
+sd_stage -> sd_scm;
+sd_stage -> sd_slm;
+sd_stage -> sd_am;
+sd_stage -> sd_CapM;
+sd_stage -> sd_ConM;
+sd_stage -> sd_ISecM;
+sd_stage -> sd_SupM;
+
+// Service Transition
+st_tps [label="Transition planning and support"];
+st_cm [label="Change management"];
+st_sacm [label="Service asset and configuration management"];
+st_rdm [label="Release and deployment management"];
+st_svt [label="Service validation and testing"];
+st_ce [label="Change evaluation"];
+st_km [label="Knowledge management"];
+st_stage -> st_tps;
+st_stage -> st_cm;
+st_stage -> st_sacm;
+st_stage -> st_rdm;
+st_stage -> st_svt;
+st_stage -> st_ce;
+st_stage -> st_km;
+
+// Service Operation
+so_em [label="Event management"];
+so_im [label="Incident management"];
+so_rf [label="Request fulfilment"];
+so_pm [label="Problem management"];
+so_am [label="Access management"];
+so_stage -> so_em;
+so_stage -> so_im;
+so_stage -> so_rf;
+so_stage -> so_pm;
+so_stage -> so_am;
+
+// Continual Service Improvement
+// NONE!
+
+
+edge [style=solid, arrowhead="normal", penwidth=1];
+edge [color=gray, len=4, weight=1];
+
+// END COPY ALL
+
+// Service Strategy
+ss_sm -> ss_spm;
+ss_sm -> ss_fm;
+ss_sm -> sd_stage;
+ss_sm -> st_stage;
+ss_sm -> st_km;
+ss_sm -> so_stage;
+ss_sm -> csi_stage;
+
+ss_spm -> sd_scm;
+ss_spm -> ss_sm;
+ss_spm -> ss_fm;
+ss_spm -> ss_dm;
+ss_spm -> ss_brm;
+ss_spm -> sd_slm;
+ss_spm -> sd_CapM;
+ss_spm -> sd_ConM;
+ss_spm -> sd_ISecM;
+ss_spm -> sd_SupM;
+ss_spm -> st_cm;
+ss_spm -> st_sacm;
+ss_spm -> st_svt;
+ss_spm -> st_km;
+ss_spm -> csi_stage;
+
+ss_fm -> ss_sm;
+ss_fm -> ss_spm;
+ss_fm -> ss_brm;
+ss_fm -> sd_CapM;
+ss_fm -> sd_am;
+ss_fm -> st_cm;
+ss_fm -> st_sacm;
+ss_fm -> csi_stage;
+
+ss_dm -> ss_sm;
+ss_dm -> ss_spm;
+ss_dm -> ss_fm;
+ss_dm -> ss_brm;
+ss_dm -> sd_slm;
+ss_dm -> sd_CapM;
+ss_dm -> sd_am;
+ss_dm -> sd_ConM;
+ss_dm -> st_cm;
+ss_dm -> st_sacm;
+ss_dm -> st_svt;
+ss_dm -> so_em;
+
+ss_brm -> ss_sm;
+ss_brm -> ss_spm;
+ss_brm -> ss_fm;
+ss_brm -> ss_dm;
+ss_brm -> sd_slm;
+ss_brm -> sd_scm;
+ss_brm -> sd_CapM;
+ss_brm -> sd_am;
+ss_brm -> sd_ConM;
+ss_brm -> st_cm;
+ss_brm -> st_rdm;
+ss_brm -> csi_stage;
+
+
+//ss_brm [label="Business relationship management"];
+
+
+// Service Design
+sd_dc -> ss_spm;
+sd_dc -> st_cm;
+sd_dc -> ss_fm;
+sd_dc -> ss_brm;
+sd_dc -> st_tps;
+sd_dc -> ss_sm;
+sd_dc -> st_rdm;
+sd_dc -> st_svt;
+sd_dc -> st_ce;
+sd_dc -> sd_slm;
+sd_dc -> sd_am;
+sd_dc -> sd_CapM;
+sd_dc -> sd_ConM;
+sd_dc -> sd_ISecM;
+sd_dc -> sd_SupM;
+
+sd_scm -> ss_spm;
+sd_scm -> ss_brm;
+sd_scm -> st_sacm;
+sd_scm -> sd_slm;
+sd_scm -> ss_dm;
+
+sd_slm -> ss_brm;
+sd_slm -> sd_scm;
+sd_slm -> so_im;
+sd_slm -> sd_SupM;
+sd_slm -> sd_am;
+sd_slm -> sd_CapM;
+sd_slm -> sd_ConM;
+sd_slm -> sd_ISecM;
+
+sd_am -> sd_slm;
+sd_am -> so_im;
+sd_am -> so_pm;
+sd_am -> sd_CapM;
+sd_am -> st_cm;
+sd_am -> sd_ConM;
+sd_am -> sd_ISecM;
+sd_am -> so_am;
+
+sd_CapM -> sd_am;
+sd_CapM -> sd_slm;
+sd_CapM -> sd_ConM;
+sd_CapM -> so_im;
+sd_CapM -> so_pm;
+sd_CapM -> ss_dm;
+
+sd_ConM -> st_cm;
+sd_ConM -> so_im;
+sd_ConM -> so_pm;
+sd_ConM -> sd_am;
+sd_ConM -> sd_slm;
+sd_ConM -> sd_CapM;
+sd_ConM -> st_sacm;
+sd_ConM -> sd_ISecM;
+
+sd_ISecM -> sd_slm;
+sd_ISecM -> so_am;
+sd_ISecM -> st_cm;
+sd_ISecM -> so_im;
+sd_ISecM -> so_pm;
+sd_ISecM -> sd_ConM;
+sd_ISecM -> st_sacm;
+sd_ISecM -> sd_am;
+sd_ISecM -> sd_CapM;
+sd_ISecM -> ss_fm;
+sd_ISecM -> sd_SupM;
+
+sd_SupM -> sd_slm;
+sd_SupM -> st_cm;
+sd_SupM -> sd_ISecM;
+sd_SupM -> ss_fm;
+sd_SupM -> ss_spm;
+sd_SupM -> sd_ConM;
+
+
+
+
+// Service Transition
+st_tps -> ss_dm;
+st_tps -> ss_spm;
+st_tps -> ss_brm;
+st_tps -> sd_stage;
+st_tps -> sd_SupM;
+st_tps -> st_cm;
+st_tps -> st_sacm;
+st_tps -> st_rdm;
+st_tps -> st_svt;
+st_tps -> st_ce;
+st_tps -> st_km;
+st_tps -> so_stage;
+st_tps -> st_stage [len=1];
+
+st_cm -> st_tps;
+st_cm -> st_rdm;
+st_cm -> sd_SupM;
+st_cm -> st_ce;
+st_cm -> ss_spm;
+st_cm -> st_sacm;
+st_cm -> so_pm;
+st_cm -> sd_ConM;
+st_cm -> sd_ISecM;
+st_cm -> sd_CapM;
+st_cm -> ss_dm;
+st_cm -> ss_spm;
+// with suppliers
+
+st_sacm -> st_cm;
+st_sacm -> ss_fm;
+st_sacm -> sd_ConM;
+st_sacm -> so_im;
+st_sacm -> so_pm;
+st_sacm -> sd_am;
+
+st_rdm -> sd_dc;
+st_rdm -> st_tps;
+st_rdm -> st_cm;
+st_rdm -> st_sacm;
+st_rdm -> st_svt;
+
+st_svt -> sd_dc;
+st_svt -> csi_stage;
+st_svt -> so_stage;
+st_svt -> ss_stage;
+
+st_ce -> st_tps;
+st_ce -> st_cm;
+st_ce -> sd_dc;
+st_ce -> sd_slm;
+st_ce -> ss_brm;
+st_ce -> st_svt;
+
+// st_km: Alle
+
+
+
+
+// Service Operation
+so_em -> sd_slm;
+so_em -> sd_ISecM;
+so_em -> sd_CapM;
+so_em -> sd_am;
+so_em -> st_sacm;
+so_em -> st_km;
+so_em -> st_cm;
+so_em -> so_im;
+so_em -> so_pm;
+so_em -> so_am;
+
+so_im -> sd_slm;
+so_im -> sd_ISecM;
+so_im -> sd_CapM;
+so_im -> sd_am;
+so_im -> st_sacm;
+so_im -> st_cm;
+so_im -> so_pm;
+so_im -> so_am;
+
+so_rf -> ss_fm;
+so_rf -> sd_scm;
+so_rf -> st_rdm;
+so_rf -> st_sacm;
+so_rf -> st_cm;
+so_rf -> so_im;
+so_rf -> so_pm;
+so_rf -> so_am;
+
+so_pm -> ss_fm;
+so_pm -> sd_am;
+so_pm -> sd_CapM;
+so_pm -> sd_ConM;
+so_pm -> sd_slm;
+so_pm -> st_cm;
+so_pm -> st_sacm;
+so_pm -> st_rdm;
+so_pm -> st_km;
+so_pm -> csi_stage;
+
+so_am -> ss_dm;
+so_am -> ss_sm;
+so_am -> sd_ISecM;
+so_am -> sd_scm;
+so_am -> sd_ConM;
+so_am -> sd_slm;
+so_am -> st_cm;
+so_am -> st_sacm;
+so_am -> so_rf;
+
+
+
+
+edge [len=3, weight=1];
+// Continual Service improvement
+csi_stage -> ss_stage;
+csi_stage -> sd_stage;
+csi_stage -> st_stage;
+csi_stage -> so_stage;
+}

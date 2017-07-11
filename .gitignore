@@ -11,3 +11,5 @@
 *.bib.bak
 trigger.pdf
 trigger.tex
+interfaces.pdf
+interfaces/smaller.dot

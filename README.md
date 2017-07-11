@@ -34,7 +34,9 @@ If the empty tag for an illocutionary point is available, the flag is set to tru
 
 ## Interfaces
 
-**TODO**
+The interfaces between processes are depicted in `interfaces/raw.dot`.
+We provide a python script to extract bidirectional interfaces.
+With Graphviz, a diagram can be generated (`make interfaces`).
 
 ## Report
 
@@ -42,9 +44,11 @@ Generating the report is done with make (or make trigger.pdf).
 There are options in config.py to enable/disable statistics and books.
 The makefile executes extractClassification.py, extractForces.py, and adds LaTeX boilerplate (head.tex, middle.tex, tail.tex).
 
-| Command         | Description                                                 |
-| --------------- | ----------------------------------------------------------- |
-| `make`          | Generate report                                             |
-| `make clean`    | Clean this folder                                           |
-| `make proper`   | Reset this folder                                           |
-| `make checkdtd` | Check raw XML files for whether they adhere to triggers.dtd |
+| Command           | Description                                                 |
+| ----------------- | ----------------------------------------------------------- |
+| `make`            | Generate report and interfaces diagram                      |
+| `make report`     | Generate report                                             |
+| `make interfaces` | Generate interfaces diagram                                 |
+| `make clean`      | Clean this folder                                           |
+| `make proper`     | Reset this folder                                           |
+| `make checkdtd`   | Check raw XML files for whether they adhere to triggers.dtd |
